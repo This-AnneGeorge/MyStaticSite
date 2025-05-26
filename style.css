@@ -1,43 +1,139 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* style.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: #f2f2f2;
-    color: #333;
 }
 
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Container for content, keeps it centered with padding */
+body > header, body > section, body > footer {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Header */
 header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 1em;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 40px 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     text-align: center;
+    margin-top: 40px;
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 nav ul {
-    list-style-type: none;
-    padding: 0;
+    list-style: none;
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
 }
 
 nav ul li a {
-    color: white;
+    color: #fff;
     text-decoration: none;
-    font-weight: bold;
-}
-
-section {
-    padding: 2em;
-    margin: 1em auto;
-    max-width: 800px;
-    background-color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 8px 15px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+nav ul li a:hover,
+nav ul li a:focus {
+    background: #fff;
+    color: #764ba2;
+    outline: none;
+}
+
+/* Sections */
+section {
+    background: rgba(0, 0, 0, 0.3);
+    margin-top: 40px;
+    padding: 30px 25px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #fff;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+/* About */
+#about p {
+    font-size: 1.2rem;
+    max-width: 700px;
+}
+
+/* Projects list */
+#projects ul {
+    list-style: inside square;
+    font-size: 1.2rem;
+    max-width: 700px;
+}
+
+#projects ul li {
+    margin-bottom: 12px;
+    padding-left: 8px;
+    transition: transform 0.3s ease;
+    cursor: default;
+}
+
+#projects ul li:hover {
+    color: #ffd700;
+    transform: scale(1.05);
+}
+
+/* Contact */
+#contact p {
+    font-size: 1.2rem;
+    max-width: 700px;
+}
+
+/* Footer */
 footer {
     text-align: center;
-    padding: 1em;
-    background-color: #ddd;
+    padding: 20px;
+    margin-top: auto;
+    background: rgba(0, 0, 0, 0.25);
+    font-size: 0.9rem;
+    border-top: 1px solid #fff;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+    section h2 {
+        font-size: 2rem;
+    }
 }
